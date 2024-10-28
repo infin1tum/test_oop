@@ -148,7 +148,6 @@ print(lion.hunt())
 print(elephant.communicate())
 print(kangaroo.run())        
      
-
 class ZooShow:
     def __init__(self, show_name, ticket_price, animal_performer):
         if  isinstance(show_name, str):
@@ -164,15 +163,16 @@ class ZooShow:
         else:
             raise ValueError("animal_performer must be of type str")
                
-    def perform_show (self):
-        return f"{self.perform_show()} is performing"
+    def animal_performer (self, animal_performer):
+        return f"{animal_performer} is performing"
 
-    def ticket_price (self):
-        return f"{self.ticket_price} is selling "
+    def ticket_price (self, ticket_price):
+        return f"{ticket_price} Money to show "
 
     def __str__(self):
-        return super().__str__()+(f'\nperform_show {self.perform_show()}\n'                         
-                                  f'ticket_price - {self.ticket_price()}\n')
+        return (f'show_name {self.show_name}\n'                         
+                f'ticket_price - {self.ticket_price}\n'
+                f'animal_performer - {self.animal_performer}\n')
 show = ZooShow(show_name = "Zoo_show", ticket_price = 100, animal_performer= "lion" )
 show_2 = ZooShow("Zoo_show2", 100, "elephant")
 show_3 = ZooShow('Zoo_show3', 100, "kangaroo")
@@ -182,3 +182,4 @@ print(f'{show}\n'
       f'{show_2}\n'
       f'---------\n'
       f'{show_3}\n')
+print(show.animal_performer())
